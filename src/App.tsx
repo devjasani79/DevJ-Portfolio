@@ -1,32 +1,34 @@
-import { Routes, Route } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Home from './pages/Home'
-import About from './pages/About'
-import Projects from './pages/Projects'
-import Contact from './pages/Contact'
-import CreativeSide from './pages/creative-side'
-import './App.css'
+import { useEffect } from 'react';
+import Navbar from './components/Layout/Navbar';
+import Hero from './components/Home/Hero';
+import About from './components/About/About';
+import ProjectsSection from './components/Projects/ProjectsSection';
+import CreativeSection from './components/Creative/CreativeSection';
+import Contact from './components/Contact/Contact';
 
 function App() {
+  useEffect(() => {
+    // Smooth scroll behavior
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
+    // Cleanup
+    return () => {
+      document.documentElement.style.scrollBehavior = 'auto';
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-950 via-zinc-900 to-black text-white">
-      <Header />
-      <main className="flex-1 pt-16">
-        <AnimatePresence mode="wait">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/creative-side" element={<CreativeSide />} />
-          </Routes>
-        </AnimatePresence>
+    <div className="min-h-screen bg-zinc-900 text-white">
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <ProjectsSection />
+        <CreativeSection />
+        <Contact />
       </main>
-      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

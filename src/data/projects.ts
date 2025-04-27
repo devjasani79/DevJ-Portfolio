@@ -1,5 +1,13 @@
 // data/projects.ts
-export const projects = [
+export interface Project {
+  title: string;
+  description: string;
+  tech: string[];
+  images: string[];
+  link: string;
+}
+
+export const projects: Project[] = [
   {
     title: "WhatsUpDev",
     description:
