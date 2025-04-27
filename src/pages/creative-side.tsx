@@ -14,7 +14,7 @@ const CreativeSide = () => {
         className="text-center mb-16"
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
             Creative Side
           </span>
         </h1>
