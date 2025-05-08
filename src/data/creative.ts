@@ -33,15 +33,15 @@ export interface InstagramVideo {
 export const choreographyStats = [
   {
     label: "Dance Styles",
-    value: "10+"
+    value: "7+"
   },
   {
     label: "Students Trained",
-    value: "500+"
+    value: "+"
   },
   {
     label: "Performances",
-    value: "100+"
+    value: "50+"
   }
 ];
 
@@ -52,18 +52,18 @@ export const artistManagementStats = [
   },
   {
     label: "Events Coordinated",
-    value: "50+"
+    value: "35+"
   },
   {
     label: "Brand Partnerships",
-    value: "20+"
+    value: "10+"
   }
 ];
 
 export const artists = [
   {
-    name: "Nirvana",
-    role: "Lead Dancer",
+    name: "Nirvana Soul",
+    role: "Rapper",
     image: "/assets/artist/nirvana.jpeg",
     socialLinks: {
       instagram: "https://www.instagram.com/nirvanasoul.music",
@@ -73,7 +73,7 @@ export const artists = [
   },
   {
     name: "Chitragupt",
-    role: "Choreographer",
+    role: "Singer & Producer",
     image: "/assets/artist/chitragupth.jpeg",
     socialLinks: {
       instagram: "https://www.instagram.com/chitraguptttt",
@@ -82,7 +82,7 @@ export const artists = [
   },
   {
     name: "Nex",
-    role: "Dance Artist",
+    role: "Entrepreneur & Model",
     image: "/assets/artist/nex.jpeg",
     socialLinks: {
       instagram: "https://www.instagram.com/nex._b_",
@@ -94,7 +94,7 @@ export const artists = [
 export const brands = [
   {
     name: "Switch It",
-    description: "Innovative dance and music platform",
+    description: "Innovative next gen Street Style Clothing Brand",
     image: "/assets/Collabs/switchit.jpeg",
     link: "https://perspectivee.company.site/"
   },
