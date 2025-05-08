@@ -37,7 +37,7 @@ export const choreographyStats = [
   },
   {
     label: "Students Trained",
-    value: "+"
+    value: "35+"
   },
   {
     label: "Performances",
