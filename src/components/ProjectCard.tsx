@@ -1,6 +1,6 @@
 // components/ProjectCard.tsx
 import { useState, useEffect } from "react";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -14,38 +14,83 @@ interface ProjectCardProps {
 const ProjectCard = ({ title, description, tech, images, link, github }: ProjectCardProps) => {
   const [index, setIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(false);
 
   useEffect(() => {
     let interval: number;
-    if (isHovered && images.length > 1) {
+    if (isAutoPlaying && images.length > 1) {
       interval = setInterval(() => {
         setIndex((prev) => (prev + 1) % images.length);
       }, 3000);
     }
     return () => clearInterval(interval);
-  }, [isHovered, images.length]);
+  }, [isAutoPlaying, images.length]);
+
+  const nextImage = () => {
+    setIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
 
   return (
     <div
       className="group relative bg-zinc-900/50 border border-zinc-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-zinc-700 hover:shadow-2xl hover:shadow-blue-500/10"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => {
+        setIsHovered(true);
+        setIsAutoPlaying(true);
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        setIsAutoPlaying(false);
+      }}
     >
       {/* Image Carousel */}
       <div className="relative aspect-video overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/80 to-transparent z-10" />
         <img
           src={images[index]}
-          alt={title}
+          alt={`${title} - Image ${index + 1}`}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
+        
+        {/* Navigation Arrows */}
         {images.length > 1 && (
-          <div className="absolute bottom-2 right-2 z-20 flex space-x-1">
+          <>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                prevImage();
+              }}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-zinc-900/50 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-zinc-900/80"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                nextImage();
+              }}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-zinc-900/50 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-zinc-900/80"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </>
+        )}
+
+        {/* Image Indicators */}
+        {images.length > 1 && (
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 flex space-x-1">
             {images.map((_, i) => (
-              <div
+              <button
                 key={i}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIndex(i);
+                }}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  i === index ? "bg-blue-400" : "bg-zinc-600"
+                  i === index ? "bg-blue-400" : "bg-zinc-600 hover:bg-zinc-500"
                 }`}
               />
             ))}

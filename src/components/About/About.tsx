@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code, Award, Users, Palette } from 'lucide-react';
+import { Code, Award, Users, Palette, Briefcase } from 'lucide-react';
 
 const skills = {
   technical: [
@@ -50,6 +50,20 @@ const certifications = [
   }
 ];
 
+const experiences = [
+  {
+    role: "Web Development Intern",
+    company: "TechSolutions Inc.",
+    duration: "June 2023 - August 2023",
+    description: "Worked on developing and maintaining web applications using React.js and Node.js. Collaborated with the team to implement new features and fix bugs. Gained hands-on experience with modern web development practices and tools.",
+    achievements: [
+      "Developed and deployed 3 new features that improved user engagement by 25%",
+      "Reduced application load time by 40% through code optimization",
+      "Collaborated with senior developers to implement best practices"
+    ]
+  }
+];
+
 const About = () => {
   return (
     <section id="about" className="py-20">
@@ -73,6 +87,39 @@ const About = () => {
             expanding my knowledge through various certifications and practical projects.
           </p>
         </motion.div>
+
+        {/* Experience */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+            <Briefcase className="w-6 h-6 text-blue-400" />
+            Professional Experience
+          </h3>
+          <div className="grid grid-cols-1 gap-6">
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-zinc-800/50 rounded-xl border border-zinc-700 p-6"
+              >
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                  <div>
+                    <h4 className="text-xl font-semibold text-white">{exp.role}</h4>
+                    <p className="text-blue-400">{exp.company}</p>
+                  </div>
+                  <p className="text-zinc-400 mt-2 md:mt-0">{exp.duration}</p>
+                </div>
+                <p className="text-zinc-300 mb-4">{exp.description}</p>
+                <ul className="list-disc list-inside space-y-2">
+                  {exp.achievements.map((achievement, i) => (
+                    <li key={i} className="text-zinc-400">{achievement}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
         {/* Skills */}
         <div className="mb-12">

@@ -34,7 +34,7 @@ const ProjectsSection = () => {
                 <ProjectCard
                   title={project.title}
                   description={project.description}
-                  image={project.images[0]}
+                  image={project.images.join(',')}
                   technologies={project.tech}
                   githubUrl={`https://github.com/devjasani79/${project.title.toLowerCase().replace(/\s+/g, '-')}`}
                   liveUrl={project.link}
