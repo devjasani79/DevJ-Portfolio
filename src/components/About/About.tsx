@@ -8,6 +8,10 @@ const skills = {
     "Object-Oriented Programming (OOPs)",
     "C", "C++", "Java", "Python", "R", "SQL"
   ],
+  tools: [
+    "Netlify", "Vercel", "Render", "Git", "GitHub",
+    "VS Code", "Figma", "Postman", "MongoDB Compass"
+  ],
   soft: [
     "Problem Solving", "Team Collaboration", "Communication",
     "Time Management", "Adaptability", "Critical Thinking"
@@ -15,10 +19,6 @@ const skills = {
   creative: [
     "UI/UX Design", "Brand Management", "Content Creation",
     "Visual Design", "Creative Direction"
-  ],
-  tools: [
-    "Netlify", "Vercel", "Render", "Git", "GitHub",
-    "VS Code", "Figma", "Postman", "MongoDB Compass"
   ]
 };
 
@@ -53,12 +53,12 @@ const certifications = [
 const experiences = [
   {
     role: "Web Development Intern",
-    company: "TechSolutions Inc.",
-    duration: "June 2023 - August 2023",
-    description: "Worked on developing and maintaining web applications using React.js and Node.js. Collaborated with the team to implement new features and fix bugs. Gained hands-on experience with modern web development practices and tools.",
+    company: "NEX TechSolutions Inc.",
+    duration: "October 2024 - January 2025",
+    description: "Worked on developing websites and web apllication along with UI/UX design. Collaborated with the team to implement new features and fix bugs. Gained hands-on experience with modern web development practices and tools.",
     achievements: [
-      "Developed and deployed 3 new features that improved user engagement by 25%",
-      "Reduced application load time by 40% through code optimization",
+      "Improved the user experience along with the design of the website",
+      "Reduced application load time through code optimization",
       "Collaborated with senior developers to implement best practices"
     ]
   }
@@ -80,11 +80,9 @@ const About = () => {
             </span>
           </h2>
           <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
-            A passionate full-stack developer with a strong foundation in both frontend and backend technologies. 
-            Currently pursuing BBA(CA) at Haribhai V. Desai College with a GPA of 8.53/10. 
-            My journey in technology is complemented by my academic excellence, having scored 77.60% in Higher Secondary 
-            and 76.60% in Secondary Education. I specialize in building modern web applications while continuously 
-            expanding my knowledge through various certifications and practical projects.
+            Hi, I’m Dev, a passionate Full-Stack Web Developer from Pune, IND. I recently graduated with a degree in BBA(CA) at Haribhai V. Desai College with a GPA of 8.53/10 affiliated to University of Pune.
+            <br></br>My journey into web development began during college, and since then, I’ve been deeply focused on building intuitive and responsive web applications.
+
           </p>
         </motion.div>
 

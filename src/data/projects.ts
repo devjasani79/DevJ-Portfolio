@@ -1,4 +1,23 @@
 // data/projects.ts
+import whatsUpDev1 from '../assets/projects/WhatsupDev1.PNG';
+import whatsUpDev2 from '../assets/projects/WhatsupDev2.PNG';
+import whatsUpDev3 from '../assets/projects/WhatsupDev3.PNG';
+import whatsUpDev4 from '../assets/projects/WhatsupDev4.PNG';
+import whatsUpDev5 from '../assets/projects/WhatsupDev5.PNG';
+import whatsUpDev6 from '../assets/projects/WhatsupDev6.PNG';
+import whatsUpDev7 from '../assets/projects/WhatsupDev7.PNG';
+import hisaan1 from '../assets/projects/Hisaan.PNG';
+import hisaan2 from '../assets/projects/Hisaan1.PNG';
+import jdm1 from '../assets/projects/jdm1.PNG';
+import jdm2 from '../assets/projects/jdm2.PNG';
+import jdm3 from '../assets/projects/jdm3.PNG';
+import jdm4 from '../assets/projects/jdm4.PNG';
+import jdm5 from '../assets/projects/jdm5.PNG';
+import jdm6 from '../assets/projects/jdm6.PNG';
+import jdm7 from '../assets/projects/jdm7.PNG';
+import jdm8 from '../assets/projects/jdm8.PNG';
+import jdm9 from '../assets/projects/jdm9.PNG';
+
 export interface Project {
   title: string;
   description: string;
@@ -13,7 +32,7 @@ export const projects: Project[] = [
     description:
     "WhatsUpDev is a real-time chat application built with MERN and socket.io, featuring instant messaging, user auth, multimedia support, dark mode, vCard import",
     tech: ["MERN", "Socket.io", "Framer", "Tailwind"],
-    images: ["/src/assets/projects/WhatsupDev1.PNG","/src/assets/projects/WhatsupDev6.PNG","/src/assets/projects/WhatsupDev5.PNG","/src/assets/projects/WhatsupDev4.PNG","/src/assets/projects/WhatsupDev2.PNG","/src/assets/projects/WhatsupDev3.PNG","/src/assets/projects/WhatsupDev7.PNG"],
+    images: [whatsUpDev1, whatsUpDev6, whatsUpDev5, whatsUpDev4, whatsUpDev2, whatsUpDev3, whatsUpDev7],
     link: "https://whats-up-dev.vercel.app/",
   },
   {
@@ -21,7 +40,7 @@ export const projects: Project[] = [
     description:
     "Expense Tracker app featuring JWT auth, CRUD operations, expense visualization with charts, and periodic email summaries via cron jobs.",
     tech: ["MERN", "JWT", "Cron", "Chart.js"],
-    images: ["/src/assets/projects/Hisaan.PNG", "/src/assets/projects/Hisaan1.PNG"],
+    images: [hisaan1, hisaan2],
     link: "https://expenses-dev.vercel.app/",
   },
   {
@@ -29,7 +48,7 @@ export const projects: Project[] = [
     description:
       "A vibrant and interactive platform celebrating the passion and designed for enthusiasts to connect, explore, and engage. JDM WEB combines creativity, technology, and passion",
     tech: ["HTML", "CSS", "Javascript","Chart.js"],
-    images: ["/src/assets/projects/jdm1.PNG", "/src/assets/projects/jdm4.PNG", "/src/assets/projects/jdm3.PNG", "/src/assets/projects/jdm2.PNG", "/src/assets/projects/jdm5.PNG", "/src/assets/projects/jdm6.PNG", "/src/assets/projects/jdm7.PNG", "/src/assets/projects/jdm8.PNG", "/src/assets/projects/jdm9.PNG"],
+    images: [jdm1, jdm4, jdm3, jdm2, jdm5, jdm6, jdm7, jdm8, jdm9],
     link: "https://jdmweb.netlify.app/",
   },
   {
