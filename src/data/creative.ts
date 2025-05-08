@@ -1,9 +1,3 @@
-import nirvanaImage from '../assets/artist/nirvana.jpeg';
-import chitraguptImage from '../assets/artist/chitragupth.jpeg';
-import nexImage from '../assets/artist/nex.jpeg';
-import switchitImage from '../assets/Collabs/switchit.jpeg';
-import rutmusicImage from '../assets/Collabs/rutmusic.jpeg';
-
 export interface Artist {
   name: string;
   image: string;
@@ -70,7 +64,7 @@ export const artists = [
   {
     name: "Nirvana",
     role: "Lead Dancer",
-    image: nirvanaImage,
+    image: "/assets/artist/nirvana.jpeg",
     socialLinks: {
       instagram: "https://www.instagram.com/nirvanasoul.music",
       spotify: "https://open.spotify.com/artist/349UK3uF5XJagxkMjvZO9b",
@@ -80,7 +74,7 @@ export const artists = [
   {
     name: "Chitragupt",
     role: "Choreographer",
-    image: chitraguptImage,
+    image: "/assets/artist/chitragupth.jpeg",
     socialLinks: {
       instagram: "https://www.instagram.com/chitraguptttt",
       youtube: "https://youtu.be/B5bngDuXlhU"
@@ -89,7 +83,7 @@ export const artists = [
   {
     name: "Nex",
     role: "Dance Artist",
-    image: nexImage,
+    image: "/assets/artist/nex.jpeg",
     socialLinks: {
       instagram: "https://www.instagram.com/nex._b_",
       file: "https://nachiketalumina.wixsite.com/nachiketportfolio"
@@ -101,13 +95,13 @@ export const brands = [
   {
     name: "Switch It",
     description: "Innovative dance and music platform",
-    image: switchitImage,
+    image: "/assets/Collabs/switchit.jpeg",
     link: "https://perspectivee.company.site/"
   },
   {
     name: "Rut Music",
     description: "Premium music production and distribution",
-    image: rutmusicImage,
+    image: "/assets/Collabs/rutmusic.jpeg",
     link: "https://rutmusic.com"
   }
 ];
@@ -116,19 +110,19 @@ export const videos: Video[] = [
   {
     title: "Contemporary Fusion",
     url: "https://www.youtube.com/embed/your-video-id-1",
-    thumbnail: nirvanaImage,
+    thumbnail: "/assets/artist/nirvana.jpeg",
     description: "A beautiful fusion of contemporary and classical dance styles."
   },
   {
     title: "Hip-Hop Showcase",
     url: "https://www.youtube.com/embed/your-video-id-2",
-    thumbnail: chitraguptImage,
+    thumbnail: "/assets/artist/chitragupth.jpeg",
     description: "High-energy hip-hop performance featuring our talented artists."
   },
   {
     title: "Street Dance Battle",
     url: "https://www.youtube.com/embed/your-video-id-3",
-    thumbnail: nexImage,
+    thumbnail: "/assets/artist/nex.jpeg",
     description: "Intense street dance battle showcasing raw talent and creativity."
   }
 ];
