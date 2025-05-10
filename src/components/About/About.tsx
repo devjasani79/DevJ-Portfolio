@@ -52,6 +52,16 @@ const certifications = [
 
 const experiences = [
   {
+    role: "Microsoft Learn Student Ambassador",
+    company: "Aadi Foundation Pvt. Ltd.",
+    duration: "January 2025 - February 2025",
+    description: "Got an opportunity to be a part Web Development Program in collaboration with Microsoft, hosted by Aadi Foundation (Delhi). Gained valuable skills in web development, backend development, AI integration, and cloud computing.",
+    achievements: [
+      "Achieved valuable skills to Static Web Application Development",
+      "Introduction to Azure Cloud Services and AI Integration" 
+    ],
+  },
+  {
     role: "Web Development Intern",
     company: "NEX TechSolutions Inc.",
     duration: "October 2024 - January 2025",
@@ -61,7 +71,8 @@ const experiences = [
       "Reduced application load time through code optimization",
       "Collaborated with senior developers to implement best practices"
     ]
-  }
+  },
+  
 ];
 
 const About = () => {
