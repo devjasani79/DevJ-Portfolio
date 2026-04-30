@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">GoogleDev Drive placeholder</title>
+  <desc id="desc">Placeholder preview card for GoogleDev Drive.</desc>
+  <rect width="1600" height="900" fill="#0d2b1a"/>
+  <rect x="70" y="70" width="1460" height="760" rx="32" fill="#122f21" stroke="#c8f135" stroke-opacity=".35"/>
+  <text x="120" y="220" fill="#f2eee6" font-family="Arial, sans-serif" font-size="52" font-weight="700">GoogleDev Drive</text>
+  <text x="120" y="290" fill="#c8f135" font-family="Arial, sans-serif" font-size="26">AI-powered cloud storage for developers</text>
+  <rect x="120" y="370" width="520" height="250" rx="20" fill="#0c0b09" opacity=".65"/>
+  <rect x="690" y="370" width="360" height="110" rx="20" fill="#173f2b"/>
+  <rect x="1080" y="370" width="330" height="110" rx="20" fill="#173f2b"/>
+  <rect x="690" y="510" width="720" height="110" rx="20" fill="#173f2b"/>
+  <text x="120" y="760" fill="#f2eee6" font-family="Arial, sans-serif" font-size="22">Placeholder image generated for local development.</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">SmarAnandh placeholder</title>
+  <desc id="desc">Placeholder preview card for SmarAnandh.</desc>
+  <rect width="1600" height="900" fill="#2a1505"/>
+  <rect x="70" y="70" width="1460" height="760" rx="32" fill="#341b08" stroke="#f2eee6" stroke-opacity=".2"/>
+  <text x="120" y="220" fill="#f2eee6" font-family="Arial, sans-serif" font-size="52" font-weight="700">SmarAnandh</text>
+  <text x="120" y="290" fill="#f0d38a" font-family="Arial, sans-serif" font-size="26">Digital elder care companion for Indian families</text>
+  <circle cx="280" cy="500" r="120" fill="#f0d38a" opacity=".18"/>
+  <rect x="470" y="390" width="880" height="90" rx="18" fill="#4a2a10"/>
+  <rect x="470" y="510" width="720" height="90" rx="18" fill="#4a2a10"/>
+  <rect x="470" y="630" width="500" height="90" rx="18" fill="#4a2a10"/>
+  <text x="120" y="760" fill="#f2eee6" font-family="Arial, sans-serif" font-size="22">Placeholder image generated for local development.</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Freelancer Marketplace placeholder</title>
+  <desc id="desc">Placeholder preview card for Freelancer Marketplace.</desc>
+  <rect width="1600" height="900" fill="#12052a"/>
+  <rect x="70" y="70" width="1460" height="760" rx="32" fill="#1e0c3b" stroke="#e0b8ff" stroke-opacity=".25"/>
+  <text x="120" y="220" fill="#f2eee6" font-family="Arial, sans-serif" font-size="52" font-weight="700">Freelancer Marketplace</text>
+  <text x="120" y="290" fill="#e0b8ff" font-family="Arial, sans-serif" font-size="26">Platform connecting clients and freelancers</text>
+  <rect x="120" y="380" width="250" height="220" rx="24" fill="#31135d"/>
+  <rect x="400" y="380" width="250" height="220" rx="24" fill="#31135d"/>
+  <rect x="680" y="380" width="250" height="220" rx="24" fill="#31135d"/>
+  <rect x="960" y="380" width="420" height="220" rx="24" fill="#220d42"/>
+  <text x="120" y="760" fill="#f2eee6" font-family="Arial, sans-serif" font-size="22">Placeholder image generated for local development.</text>
+</svg>

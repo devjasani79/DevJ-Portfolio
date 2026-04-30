@@ -1,5 +1,3 @@
-"use client";
-
 export default function About() {
   return (
     <section
@@ -20,7 +18,7 @@ export default function About() {
             marginBottom: "0.5rem",
           }}
         >
-          06 — About
+          06 - About
         </p>
         <h2
           style={{
@@ -51,7 +49,11 @@ export default function About() {
             lineHeight: 1.8,
           }}
         >
-          I'm a software engineer from Pune with a passion for building scalable, production-grade applications. I specialize in full-stack development — crafting clean backend systems with Node.js and Express, intuitive React frontends, and robust PostgreSQL databases. I obsess over performance, clean architecture, and code that actually lasts.
+          I&apos;m a software engineer from Pune with a passion for building
+          scalable, production-grade applications. I specialize in full-stack
+          development - crafting clean backend systems with Node.js and Express,
+          intuitive React frontends, and robust PostgreSQL databases. I obsess
+          over performance, clean architecture, and code that actually lasts.
         </p>
 
         <p
@@ -62,7 +64,12 @@ export default function About() {
             lineHeight: 1.8,
           }}
         >
-          Lately, I've been diving deep into generative AI and agentic systems — exploring LLM integration, RAG pipelines, and autonomous workflows. I believe AI isn't a magic button; it's a tool that requires thoughtful engineering to build real value. I'm actively working on projects that bridge production backend engineering with cutting-edge AI capability.
+          Lately, I&apos;ve been diving deep into generative AI and agentic
+          systems - exploring LLM integration, RAG pipelines, and autonomous
+          workflows. I believe AI isn&apos;t a magic button; it&apos;s a tool
+          that requires thoughtful engineering to build real value. I&apos;m
+          actively working on projects that bridge production backend
+          engineering with cutting-edge AI capability.
         </p>
 
         <p
@@ -73,7 +80,10 @@ export default function About() {
             lineHeight: 1.8,
           }}
         >
-          Outside of code, I'm into dance — hip-hop, Bollywood, freestyle. The same precision and discipline I bring to engineering, I bring to movement. Both require understanding rhythm, spatial awareness, and practicing until it feels natural.
+          Outside of code, I&apos;m into dance - hip-hop, Bollywood, freestyle.
+          The same precision and discipline I bring to engineering, I bring to
+          movement. Both require understanding rhythm, spatial awareness, and
+          practicing until it feels natural.
         </p>
 
         <blockquote
@@ -87,7 +97,9 @@ export default function About() {
             fontSize: "15px",
           }}
         >
-          "I build systems by day. I move to rhythms at night. Both require the same thing: precision, discipline, and the willingness to iterate until it's right."
+          &ldquo;I build systems by day. I move to rhythms at night. Both
+          require the same thing: precision, discipline, and the willingness to
+          iterate until it&apos;s right.&rdquo;
         </blockquote>
       </div>
     </section>

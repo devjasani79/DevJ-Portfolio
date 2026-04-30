@@ -10,7 +10,6 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email && message) {
-      // Open mailto
       window.location.href = `mailto:devjasani79@gmail.com?subject=Portfolio Contact&body=${encodeURIComponent(
         `Email: ${email}\n\n${message}`
       )}`;
@@ -42,7 +41,7 @@ export default function Contact() {
             marginBottom: "0.5rem",
           }}
         >
-          07 — Get In Touch
+          07 â€” Get In Touch
         </p>
         <h2
           style={{
@@ -54,7 +53,7 @@ export default function Contact() {
             marginBottom: "1rem",
           }}
         >
-          Let's Build Something
+          Let&apos;s Build Something
         </h2>
 
         <p
@@ -65,7 +64,9 @@ export default function Contact() {
             lineHeight: 1.8,
           }}
         >
-          Have a project in mind? Let's talk. Whether it's full-stack development, AI integration, or just a conversation about tech — I'm always open to interesting work.
+          Have a project in mind? Let&apos;s talk. Whether it&apos;s full-stack
+          development, AI integration, or just a conversation about tech â€” I
+          am always open to interesting work.
         </p>
       </div>
 
@@ -176,7 +177,7 @@ export default function Contact() {
                 animation: "fadeOut 1s ease 0.5s forwards",
               }}
             >
-              Sent ✓
+              Sent âœ“
             </span>
           )}
         </div>
@@ -241,12 +242,6 @@ export default function Contact() {
           GitHub
         </a>
       </div>
-
-      <style>{`
-        @keyframes fadeOut {
-          to { opacity: 0; }
-        }
-      `}</style>
     </section>
   );
 }

@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects } from "@/app/lib/data/projects";
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,7 +14,6 @@ const GAP = 24;
 export default function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const [active, setActive] = useState(0);
   const [modal, setModal] = useState<typeof projects[0] | null>(null);
 
   useEffect(() => {
@@ -22,10 +21,8 @@ export default function Projects() {
     const track = trackRef.current;
     if (!section || !track) return;
 
-    // Initial position
     gsap.set(track, { x: 0 });
 
-    // ScrollTrigger reveal
     gsap.from(track.querySelectorAll(".card"), {
       scrollTrigger: { trigger: section, start: "top 80%" },
       y: 40,
@@ -35,7 +32,6 @@ export default function Projects() {
       ease: "power3.out",
     });
 
-    // Auto-loop carousel
     const totalWidth = projects.length * (CARD_WIDTH + GAP);
     gsap.to(track, {
       x: -totalWidth,
@@ -44,7 +40,7 @@ export default function Projects() {
       repeat: -1,
     });
 
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
   }, []);
 
   return (
@@ -53,7 +49,9 @@ export default function Projects() {
       ref={sectionRef}
       style={{ padding: "8rem 0 5rem", overflow: "hidden" }}
     >
-      <div style={{ padding: "0 clamp(1.5rem, 5vw, 5rem)", marginBottom: "3rem" }}>
+      <div
+        style={{ padding: "0 clamp(1.5rem, 5vw, 5rem)", marginBottom: "3rem" }}
+      >
         <p
           style={{
             fontFamily: "var(--font-mono)",
@@ -64,7 +62,7 @@ export default function Projects() {
             marginBottom: "0.5rem",
           }}
         >
-          02 — Selected Work
+          02 â€” Selected Work
         </p>
         <h2
           style={{
@@ -87,7 +85,6 @@ export default function Projects() {
           padding: "0 0 2rem",
         }}
       >
-        {/* Edge fades */}
         <div
           style={{
             position: "absolute",
@@ -113,7 +110,6 @@ export default function Projects() {
           }}
         />
 
-        {/* Track */}
         <div
           ref={trackRef}
           style={{
@@ -123,8 +119,12 @@ export default function Projects() {
             width: "max-content",
           }}
         >
-          {[...projects, ...projects].map((proj, i) => (
-            <Card key={i} project={proj} onClick={() => setModal(proj)} />
+          {[...projects, ...projects].map((project, index) => (
+            <Card
+              key={`${project.id}-${index}`}
+              project={project}
+              onClick={() => setModal(project)}
+            />
           ))}
         </div>
       </div>
@@ -138,7 +138,7 @@ function Card({
   project,
   onClick,
 }: {
-  project: typeof projects[0];
+  project: (typeof projects)[number];
   onClick: () => void;
 }) {
   const [showImg, setShowImg] = useState(false);
@@ -182,20 +182,16 @@ function Card({
         >
           {project.num}
         </span>
-        {showImg && (
-          <img
-            src={project.image || ""}
+        {showImg && project.image && (
+          <Image
+            src={project.image}
             alt={project.name}
+            fill
+            sizes="420px"
+            unoptimized
             style={{
-              position: "absolute",
-              inset: 0,
-              width: "100%",
-              height: "100%",
               objectFit: "cover",
               animation: "fadeIn 0.4s ease",
-            }}
-            onError={(e) => {
-              (e.target as HTMLImageElement).style.display = "none";
             }}
           />
         )}
@@ -293,7 +289,7 @@ function Modal({
   project,
   onClose,
 }: {
-  project: typeof projects[0];
+  project: (typeof projects)[number];
   onClose: () => void;
 }) {
   return (
@@ -347,19 +343,13 @@ function Modal({
             {project.num}
           </span>
           {project.image && (
-            <img
+            <Image
               src={project.image}
               alt={project.name}
-              style={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
-              onError={(e) => {
-                (e.target as HTMLImageElement).style.display = "none";
-              }}
+              fill
+              sizes="(max-width: 768px) 100vw, 680px"
+              unoptimized
+              style={{ objectFit: "cover" }}
             />
           )}
           <button
@@ -379,6 +369,7 @@ function Modal({
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              zIndex: 1,
             }}
           >
             ×
@@ -407,7 +398,7 @@ function Modal({
                   marginBottom: "0.4rem",
                 }}
               >
-                {project.num} — Project
+                {project.num} â€” Project
               </p>
               <h2
                 style={{
@@ -422,25 +413,15 @@ function Modal({
               </h2>
             </div>
 
-            <div style={{ display: "flex", gap: "8px" }}>
+            <div style={{ display: "flex", gap: "10px" }}>
               {project.live && (
                 <a
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: "11px",
-                    letterSpacing: "0.1em",
-                    color: "var(--color-bg)",
-                    background: "var(--color-accent)",
-                    padding: "8px 16px",
-                    borderRadius: "2px",
-                    textDecoration: "none",
-                    textTransform: "uppercase",
-                  }}
+                  style={linkStyle}
                 >
-                  Live Demo
+                  Live
                 </a>
               )}
               {project.github && (
@@ -448,55 +429,24 @@ function Modal({
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: "11px",
-                    letterSpacing: "0.1em",
-                    color: "var(--color-text-primary)",
-                    padding: "8px 16px",
-                    borderRadius: "2px",
-                    textDecoration: "none",
-                    textTransform: "uppercase",
-                    border: "0.5px solid var(--color-border)",
-                  }}
+                  style={linkStyle}
                 >
-                  GitHub
+                  Code
                 </a>
               )}
             </div>
           </div>
-
-          <div
-            style={{
-              height: "0.5px",
-              background: "var(--color-border)",
-              marginBottom: "1.5rem",
-            }}
-          />
 
           <p
             style={{
               fontFamily: "var(--font-body)",
               fontSize: "14px",
               color: "var(--color-text-secondary)",
-              lineHeight: 1.8,
+              lineHeight: 1.7,
               marginBottom: "1.5rem",
             }}
           >
             {project.description}
-          </p>
-
-          <p
-            style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: "10px",
-              color: "var(--color-text-tertiary)",
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              marginBottom: "0.75rem",
-            }}
-          >
-            Tech Stack
           </p>
 
           <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
@@ -507,10 +457,10 @@ function Modal({
                   fontFamily: "var(--font-mono)",
                   fontSize: "10px",
                   letterSpacing: "0.08em",
-                  padding: "5px 12px",
+                  padding: "4px 8px",
                   borderRadius: "2px",
                   border: "0.5px solid var(--color-border)",
-                  color: "var(--color-text-secondary)",
+                  color: "var(--color-text-tertiary)",
                   textTransform: "uppercase",
                 }}
               >
@@ -523,3 +473,15 @@ function Modal({
     </div>
   );
 }
+
+const linkStyle: React.CSSProperties = {
+  fontFamily: "var(--font-mono)",
+  fontSize: "11px",
+  letterSpacing: "0.1em",
+  color: "var(--color-bg)",
+  background: "var(--color-text-primary)",
+  padding: "10px 14px",
+  borderRadius: "4px",
+  textDecoration: "none",
+  textTransform: "uppercase",
+};

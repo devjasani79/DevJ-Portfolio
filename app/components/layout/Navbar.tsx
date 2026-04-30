@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const links = [
   { label: "Work", href: "#work" },
+  { label: "Blog", href: "/blog" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
@@ -77,28 +78,45 @@ export default function Navbar() {
       </Link>
 
       <div style={{ display: "flex", alignItems: "center", gap: "2.5rem" }}>
-        {links.map((link) => (
-          <button
-            key={link.label}
-            onClick={() => scroll(link.href)}
-            style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: "11px",
-              letterSpacing: "0.1em",
-              color: "var(--color-text-secondary)",
-              background: "none",
-              border: "none",
-              cursor: "none",
-              textTransform: "uppercase",
-              padding: 0,
-            }}
-          >
-            {link.label}
-          </button>
-        ))}
+        {links.map((link) =>
+          link.href.startsWith("/") ? (
+            <Link
+              key={link.label}
+              href={link.href}
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "11px",
+                letterSpacing: "0.1em",
+                color: "var(--color-text-secondary)",
+                textDecoration: "none",
+                textTransform: "uppercase",
+              }}
+            >
+              {link.label}
+            </Link>
+          ) : (
+            <button
+              key={link.label}
+              onClick={() => scroll(link.href)}
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "11px",
+                letterSpacing: "0.1em",
+                color: "var(--color-text-secondary)",
+                background: "none",
+                border: "none",
+                cursor: "none",
+                textTransform: "uppercase",
+                padding: 0,
+              }}
+            >
+              {link.label}
+            </button>
+          )
+        )}
 
         <a
-          href="public/Resume.pdf"
+          href="/Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           style={{
