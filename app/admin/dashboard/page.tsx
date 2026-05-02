@@ -26,7 +26,7 @@ export default function AdminDashboard() {
   return (
     <div style={{ padding: '2rem' }}>
       <h1>Admin Dashboard</h1>
-      
+
       <button onClick={() => window.location.href = '/admin/dashboard/posts/create'}>
         + New Post
       </button>
@@ -58,6 +58,15 @@ export default function AdminDashboard() {
           </tbody>
         </table>
       )}
+      <div style={{ marginBottom: '2rem' }}>
+        <button onClick={() => window.location.href = '/admin/dashboard/posts/create'}>
+          + New Post
+        </button>
+        <button onClick={() => window.location.href = '/admin/dashboard/comments'} style={{ marginLeft: '10px' }}>
+          📋 Pending Comments
+        </button>
+      </div>
     </div>
+
   )
 }
